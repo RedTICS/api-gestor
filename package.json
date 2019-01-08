@@ -1,0 +1,26 @@
+{
+  "name": "gestion-salud",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Inversiones",
+  "main": "index.js",
+  "author": "Luis Parada",
+  "license": "ISC",
+  "scripts": {
+    "startNode": "tsc && gulp && concurrently \"npm run node\" ",
+    "start": "concurrently \"npm run tsc:w\" \"npm run node\" ",
+    "node": "nodemon ./index.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "@types/mongoose": "^5.3.7",
+    "@types/node": "^10.12.18",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.2",
+    "nodemon": "^1.18.9",
+    "require-dir": "^0.3.0"
+  }
+}
