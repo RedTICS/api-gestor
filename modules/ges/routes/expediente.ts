@@ -1,20 +1,19 @@
 import * as express from 'express';
-import { gestor } from './../schemas/gestor';
+import { expediente } from './../schemas/expediente';
 
 var router = express.Router();
 router.post('/expediente', function (req, res, next) {
-    let expediente = new gestor(req.body);
-    expediente.save((err) => {
+    let expedienteNuevo = new expediente(req.body);
+    expedienteNuevo.save((err, expediente) => {
         if (err) {
             return next(err);
         }
-        res.status(201).json(expediente);
+        res.json(expediente);
     });
 });
 
-router.get('/gestor', function (req, res, next) {
-    console.log("Entraaaaaa");
-    let query = gestor.find({});
+router.get('/expedientes', function (req, res, next) {    
+    let query = expediente.find({});
 
     query.exec(function (err, data) {
         if (err) {
